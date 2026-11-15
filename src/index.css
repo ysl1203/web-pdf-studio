@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+/* Default: Studio Daylight Paper (Warm Limestone & Swiss Vermilion) */
+:root {
+  --bg-mat: #EAE7E1;
+  --bg-chrome: #FAF9F6;
+  --bg-surface: #FFFFFF;
+  --bg-hover: #F1EEE8;
+  --border-hairline: #DDD8CE;
+  --border-strong: #C5BEB0;
+  --text-primary: #18181B;
+  --text-secondary: #52525B;
+  --text-muted: #78777D;
+  --accent: #C93B2B;
+  --accent-hover: #B03022;
+  --accent-soft: rgba(201, 59, 43, 0.10);
+  --danger: #DC2626;
+  --success: #15803D;
+  --warning: #C26A14;
+  --mat-dot: rgba(24, 24, 27, 0.085);
+  --shadow-float: 0 10px 30px rgba(24, 24, 27, 0.12), 0 1px 4px rgba(24, 24, 27, 0.08);
+  --shadow-page: 0 10px 28px rgba(24, 24, 27, 0.14), 0 2px 6px rgba(24, 24, 27, 0.07);
+}
+
+/* Dark Variant: Obsidian Graphite Studio */
+[data-theme="dark"] {
+  --bg-mat: #121316;
+  --bg-chrome: #181A1F;
+  --bg-surface: #21242B;
+  --bg-hover: #2A2E37;
+  --border-hairline: #2B2E38;
+  --border-strong: #3E4351;
+  --text-primary: #F3F2EE;
+  --text-secondary: #A6A9B4;
+  --text-muted: #717684;
+  --accent: #E04F3E;
+  --accent-hover: #EA6151;
+  --accent-soft: rgba(224, 79, 62, 0.16);
+  --danger: #EF4444;
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --mat-dot: rgba(255, 255, 255, 0.055);
+  --shadow-float: 0 14px 36px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-page: 0 12px 34px rgba(0, 0, 0, 0.45);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "Inter", "HarmonyOS Sans SC", "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: var(--bg-mat);
+    color: var(--text-primary);
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.studio-mat {
+  background-color: var(--bg-mat);
+  background-image: radial-gradient(var(--mat-dot) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Crisp studio scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
